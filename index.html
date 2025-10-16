@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jhonna Pelicano — Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --accent: #8b5cf6;
+      --accent-2: #5b21b6;
+      --muted: #94a3b8;
+      --glass-bg: rgba(255,255,255,0.06);
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      margin:0; color:#e6eef8; background:#060006; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+
+    .cosmic-layer{position:fixed; inset:0; z-index:-10; pointer-events:none; transform:translateZ(0);}
+    .stars{background:
+      radial-gradient(circle at 20% 10%, rgba(139,92,246,0.08), transparent 5%),
+      radial-gradient(circle at 80% 90%, rgba(59,130,246,0.04), transparent 5%),
+      url('https://i.pinimg.com/1200x/85/7b/a8/857ba8e3c2a1b4f41fef41b55d334be3.jpg') center/cover no-repeat;
+      opacity:0.6; mix-blend-mode:screen;}
+    .nebula{background:
+      radial-gradient(800px 400px at 10% 15%, rgba(139,92,246,0.18), transparent 12%),
+      radial-gradient(600px 300px at 85% 85%, rgba(99,102,241,0.14), transparent 12%);
+      filter:blur(40px); opacity:0.9}
+    .grid-dots{background-image:linear-gradient(transparent 70%, rgba(255,255,255,0.02) 80%), linear-gradient(90deg, transparent 95%, rgba(255,255,255,0.02) 95%); background-size:40px 40px; mix-blend-mode:overlay; opacity:0.06}
+
+    .container{max-width:1100px; margin:0 auto; padding:4rem 1.25rem}
+    .glass{background:var(--glass-bg); backdrop-filter:blur(10px) saturate(120%); border:1px solid rgba(255,255,255,0.06); border-radius:14px; box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .profile-photo{width:170px;height:170px;border-radius:999px;object-fit:cover;border:3px solid rgba(255,255,255,0.12);display:block;margin:0 auto}
+    .profile-wrap{position:relative; display:inline-block}
+    .photo-glow{position:absolute; inset: -18px; border-radius:999px; filter:blur(30px); opacity:0.9; pointer-events:none}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .floaty{animation:floaty 6s ease-in-out infinite}
+    .reveal{opacity:0; transform:translateY(24px) scale(0.995); transition: all 700ms cubic-bezier(.17,.84,.44,1)}
+    .reveal.active{opacity:1; transform:translateY(0) scale(1)}
+    h1{font-size:2.25rem}
+    @media(min-width:768px){h1{font-size:3rem}}
+    .skill{padding:1rem; text-align:center}
+    .skill .logo{width:48px;height:48px;margin:0 auto;border-radius:10px;padding:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .proj{position:relative; overflow:hidden}
+    .proj img{display:block;width:100%;height:180px;object-fit:cover;transition:transform .6s cubic-bezier(.2,.9,.2,.99)}
+    .proj:hover img{transform:scale(1.06)}
+    .proj .meta{position:absolute; left:12px; right:12px; bottom:12px; display:flex; justify-content:space-between; align-items:center}
+    .proj .meta .badge{background:linear-gradient(90deg,var(--accent),var(--accent-2)); padding:6px 10px; border-radius:999px; font-weight:600; font-size:12px}
+    .parallax{transform:translateY(0); transition:transform .2s linear}
+    header{position:fixed; top:18px; left:50%; transform:translateX(-50%); width:94%; max-width:1100px; z-index:40}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    footer{opacity:0.9}
+    a:focus{outline:2px solid rgba(139,92,246,0.25); outline-offset:3px}
+    .muted{color:var(--muted)}
+    .accent{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="cosmic-layer stars parallax" data-speed="0.12"></div>
+  <div class="cosmic-layer nebula parallax" data-speed="0.06"></div>
+  <div class="cosmic-layer grid-dots parallax" data-speed="0.02"></div>
+
+  <header>
+    <nav class="glass p-3 nav-inner container">
+      <a href="#about" class="flex items-center gap-3 no-underline">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br flex items-center justify-center text-white font-extrabold">
+          <img src="https://i.pinimg.com/736x/47/7d/fb/477dfbacea5f67c17ee984df2e75f8ed.jpg" alt="">
+        </div>
+        <div class="hidden sm:block">
+          <div class="text-sm font-semibold leading-none">Jhonna Pelicano</div>
+          <div class="text-[11px] muted -mt-0.5">Front-End Developer</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm muted">
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#experience" class="hover:text-white">Experience</a>
+        <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded text-white shadow hover:opacity-95">Contact</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobileBtn" aria-label="Open menu" class="p-2 muted focus:scale-95"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+
+    <div id="mobileNav" class="hidden mt-2 glass p-3 rounded max-w-md mx-auto container">
+      <div class="flex flex-col gap-3">
+        <a href="#about" class="py-2 px-3 rounded hover:bg-white/5">About</a>
+        <a href="#skills" class="py-2 px-3 rounded hover:bg-white/5">Skills</a>
+        <a href="#projects" class="py-2 px-3 rounded hover:bg-white/5">Projects</a>
+        <a href="#contact" class="py-2 px-3 rounded bg-gradient-to-r from-purple-600 to-indigo-600 text-white">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <section id="about" class="container text-center py-12">
+      <div class="glass p-8 reveal">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="md:w-1/3 text-center">
+            <div class="profile-wrap relative inline-block">
+              <img src="https://i.pinimg.com/1200x/27/93/7a/27937ab599a689ac38ec0d3620d4af69.jpg" alt="Jhonna Pelicano" class="profile-photo floaty"/>
+              <div class="photo-glow" style="background:radial-gradient(circle at 30% 30%, rgba(139,92,246,0.45), transparent 18%), radial-gradient(circle at 70% 70%, rgba(99,102,241,0.22), transparent 20%);"></div>
+            </div>
+          </div>
+
+          <div class="md:w-2/3 text-left">
+            <span class="text-sm accent block mb-2"> Hello! I'm actively looking for Front-End Developer opportunities</span>
+            <h1 class="font-extrabold leading-tight mb-3">Jhonna Pelicano — Front-End Developer</h1>
+            <p class="text-[15px] muted max-w-2xl">
+              I’m a passionate Front-End Developer who loves creating responsive, user-friendly, and visually appealing websites using HTML, CSS, and JavaScript. 
+              My goal is to craft modern digital experiences that are both beautiful and functional.
+            </p>
+            <div class="flex gap-3 mt-4">
+              <a href="#projects" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded text-white text-sm shadow">View Projects</a>
+              <a href="#contact" class="px-4 py-2 border border-white/10 rounded text-sm text-white/90 hover:bg-white/5">Contact</a>
+            </div>
+            <div class="mt-4 text-sm muted">
+              <strong>Location:</strong> Philippines &nbsp; • &nbsp; <strong>Availability:</strong> Open to work
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container py-12">
+      <h2 class="text-3xl font-bold text-center mb-8 reveal">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="glass skill reveal p-4">
+          <div class="logo"><img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="mx-auto w-12 h-12"/></div>
+          <div class="mt-3 font-semibold">HTML & CSS</div>
+          <div class="text-sm muted mt-1">Semantic HTML, responsive layouts</div>
+        </div>
+        <div class="glass skill reveal p-4">
+          <div class="logo"><img alt="JS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="mx-auto w-12 h-12"/></div>
+          <div class="mt-3 font-semibold">JavaScript / TypeScript</div>
+          <div class="text-sm muted mt-1">ES6+, TypeScript, tooling</div>
+        </div>
+        <div class="glass skill reveal p-4">
+          <div class="logo"><img alt="Mongo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="mx-auto w-12 h-12"/></div>
+          <div class="mt-3 font-semibold">Databases</div>
+          <div class="text-sm muted mt-1">MongoDB, SQL</div>
+        </div>
+        <div class="glass skill reveal p-4">
+          <div class="logo"><img alt="Cloud" src="https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg" class="mx-auto w-12 h-12"/></div>
+          <div class="mt-3 font-semibold">Cloud & Deploy</div>
+          <div class="text-sm muted mt-1">Vercel, Netlify, Docker</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container py-12">
+      <h2 class="text-3xl font-bold text-center mb-8 reveal">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Tourism Website -->
+        <article class="glass proj reveal p-3 rounded hover:scale-[1.02] transition-transform">
+          <a href="https://your-tourism-system-link.vercel.app" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.pinimg.com/1200x/45/91/bd/4591bd23f4b08a9ddc68962152424def.jpg" alt="Tourism Website">
+          </a>
+          <div class="p-3">
+            <h3 class="font-semibold">Tourism Website</h3>
+            <p class="text-sm muted mt-1">
+              Discover Mabini Batangas — A responsive tourism website showcasing local attractions, culture, and experiences to inspire travel and exploration.
+            </p>
+            <div class="flex items-center gap-2 mt-3">
+              <a href="https://indexhtml-beta-peach.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="px-3 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded text-white text-sm hover:opacity-90">
+                🔗 View Live Site
+              </a>
+            </div>
+        </article>
+
+
+        <!-- Ordering System -->
+        <article class="glass proj reveal p-3 rounded">
+          <img src="https://i.pinimg.com/736x/f2/5f/02/f25f02b9196314ec96558899771da9f4.jpg" alt="Ordering System">
+          <div class="p-3">
+            <h3 class="font-semibold">Ordering System</h3>
+            <p class="text-sm muted mt-1">It lets users browse coffee products, add them to a cart, and view their orders in a modern glassmorphism design.</p>
+           </p>
+            <div class="flex items-center gap-2 mt-3">
+              <a href="https://kape-omega.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="px-3 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded text-white text-sm hover:opacity-90">
+                🔗 View Live Site
+              </a>
+            </div>
+        </article>
+
+        <!-- Cosmetics System -->
+        <article class="glass proj reveal p-3 rounded">
+          <img src="https://i.pinimg.com/736x/64/23/b8/6423b8c1e0744e94c3121345b9e6126f.jpg" alt="Bank Modern Payment System">
+          <div class="p-3">
+            <h3 class="font-semibold">Cosmetics System</h3>
+            <p class="text-sm muted mt-1">PetiBeauty is your ultimate destination for high-quality cosmetics that bring out your natural beauty. From radiant foundations to bold lip colors, our products are designed to help you look and feel confident every day.</p>
+           </p>
+            <div class="flex items-center gap-2 mt-3">
+              <a href="https://peti-cos.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="px-3 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded text-white text-sm hover:opacity-90">
+                🔗 View Live Site
+              </a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="container py-12">
+      <h2 class="text-3xl font-bold text-center mb-8 reveal">Experience</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass p-6 reveal">
+          <h3 class="font-semibold text-xl">💻Front-End Developer
+          <p class="text-sm muted mb-2">3rd Year IT Student | 2025 – Present</p>
+          <p class="text-[15px] muted">
+            I specialize in building responsive and user-friendly websites using HTML, CSS, Tailwind, and JavaScript.
+As a student developer, I’ve created various projects such as portfolio pages, coffee shop sites, and online ordering systems.
+I enjoy turning creative ideas into clean, functional designs while continuously improving my skills in UI/UX and web performance.
+          </p>
+        </div>
+        <div class="glass p-6 reveal">
+          <h3 class="font-semibold text-xl">💻ICT Support / Web Design Intern</h3>
+          <p class="text-sm muted mb-2">NC II Holder in Information and Communications Technology (ICT)
+Senior High School – Grade 12 | Graduated 2023</p>
+          <p class="text-[15px] muted">
+Gained practical experience in computer systems servicing, hardware setup, and basic web development.
+Assisted in troubleshooting and maintaining computer networks, software installations, and website updates.
+Developed small-scale projects using HTML, CSS, and basic JavaScript, applying technical skills learned during training.
+Strengthened problem-solving, teamwork, and time management skills through hands-on ICT tasks and on-the-job training.          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container py-12 text-center">
+      <h2 class="text-3xl font-bold mb-4 reveal">Contact</h2>
+      <p class="text-[var(--muted)] mb-6 reveal">I'm open to job opportunities and collaborations. Feel free to reach out!</p>
+
+      <div class="flex items-center justify-center gap-6 text-xl muted mb-6 reveal">
+        <a href="https://github.com/Jhonnatty" target="_blank" class="hover:text-white transition-transform hover:scale-110"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/JHONNA PELICANO" target="_blank" class="hover:text-white transition-transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+        <a href="jhonnapelicano36@gmail.com" class="hover:text-white transition-transform hover:scale-110"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+      <div class="max-w-xl mx-auto glass p-6 reveal">
+        <form id="contactForm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <input id="name" name="name" placeholder="Your name" class="p-3 bg-transparent border border-white/6 rounded" />
+            <input id="email" name="email" placeholder="Your email" type="email" class="p-3 bg-transparent border border-white/6 rounded" />
+          </div>
+          <textarea id="message" name="message" placeholder="Message" class="mt-3 p-3 bg-transparent border border-white/6 rounded w-full h-28"></textarea>
+          <div class="mt-3 text-right">
+            <button type="button" id="sendBtn" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded text-white">Send message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 text-sm muted border-t border-white/5">
+    © 2025 Jhonna Pelicano. All rights reserved.
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn?.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
+
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll(){
+      const windowH = window.innerHeight;
+      for(const el of reveals){
+        const rect = el.getBoundingClientRect();
+        if(rect.top < windowH - 80) el.classList.add('active');
+      }
+    }
+    window.addEventListener('scroll', revealOnScroll); revealOnScroll();
+
+    const layers = document.querySelectorAll('.parallax');
+    window.addEventListener('scroll', ()=>{
+      const scrollY = window.scrollY;
+      layers.forEach(layer=>{
+        const speed = layer.getAttribute('data-speed');
+        layer.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+    });
+
+    document.getElementById('sendBtn')?.addEventListener('click',()=>{
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const message=document.getElementById('message').value.trim();
+      if(!name||!email||!message){alert('Please fill all fields.'); return;}
+      const mailto=`mailto:jhonnapelicano36@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
+      window.location.href=mailto;
+    });
+  </script>
+</body>
+</html>
