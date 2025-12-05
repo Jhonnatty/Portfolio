@@ -1,0 +1,2086 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jhonna Pelicano — Front-End Developer & IT Student</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            },
+            secondary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            dark: {
+              50: '#64748b',
+              100: '#475569',
+              200: '#334155',
+              300: '#1e293b',
+              400: '#0f172a',
+              500: '#020617',
+              600: '#000712',
+              700: '#00040d',
+              800: '#000208',
+              900: '#000000',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'float-2': 'float 8s ease-in-out infinite',
+            'float-3': 'float 10s ease-in-out infinite',
+            'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+            'gradient': 'gradient 8s ease infinite',
+            'shimmer': 'shimmer 2s infinite',
+            'bounce-slow': 'bounce 3s infinite',
+            'wave': 'wave 5s ease-in-out infinite',
+            'spin-slow': 'spin 20s linear infinite',
+            'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+            'bounce-in': 'bounceIn 0.8s ease-out',
+            'slide-in': 'slideIn 0.6s ease-out',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            'rotate-3d': 'rotate3d 20s linear infinite',
+            'text-shimmer': 'textShimmer 2s ease-in-out infinite',
+            'border-glow': 'borderGlow 2s ease-in-out infinite',
+            'neon-flicker': 'neonFlicker 1.5s ease-in-out infinite',
+            'particle-float': 'particleFloat 15s linear infinite',
+            'morph': 'morph 8s ease-in-out infinite',
+            'glitch': 'glitch 0.3s linear infinite',
+            'parallax': 'parallax 20s linear infinite',
+            'rainbow': 'rainbow 3s linear infinite',
+            'typewriter': 'typewriter 4s steps(40) infinite',
+            'orbit': 'orbit 10s linear infinite',
+            'vibrate': 'vibrate 0.5s linear infinite',
+            'ripple': 'ripple 2s linear infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'pulse-border': 'pulseBorder 2s ease-in-out infinite',
+            'spin-reverse': 'spinReverse 3s linear infinite',
+            'dash': 'dash 1.5s ease-in-out infinite',
+            'blink': 'blink 1s step-end infinite',
+            'expand': 'expand 0.5s ease-out',
+            'wiggle': 'wiggle 0.5s ease-in-out infinite',
+            'swing': 'swing 2s ease-in-out infinite',
+            'jump': 'jump 0.5s ease-out infinite',
+            'social-pulse': 'socialPulse 1.5s ease-in-out infinite',
+            'framework-float': 'frameworkFloat 15s linear infinite',
+            'gradient-flow': 'gradientFlow 4s linear infinite',
+            'bounce-twist': 'bounceTwist 3s ease-in-out infinite',
+            'color-cycle': 'colorCycle 6s linear infinite',
+            'icon-spin': 'iconSpin 3s linear infinite',
+            'light-beam': 'lightBeam 2s linear infinite',
+            'connect-glow': 'connectGlow 2s ease-in-out infinite',
+            'network-pulse': 'networkPulse 2s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            'pulse-glow': {
+              '0%, 100%': { 
+                opacity: '1',
+                boxShadow: '0 0 20px rgba(139, 92, 246, 0.5)'
+              },
+              '50%': { 
+                opacity: '0.8',
+                boxShadow: '0 0 40px rgba(139, 92, 246, 0.8)'
+              },
+            },
+            gradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-1000px 0' },
+              '100%': { backgroundPosition: '1000px 0' },
+            },
+            wave: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '25%': { transform: 'rotate(5deg)' },
+              '75%': { transform: 'rotate(-5deg)' },
+            },
+            bounceIn: {
+              '0%': { transform: 'scale(0.3)', opacity: '0' },
+              '50%': { transform: 'scale(1.05)', opacity: '0.8' },
+              '70%': { transform: 'scale(0.9)', opacity: '1' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            slideIn: {
+              '0%': { transform: 'translateX(-100%)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            fadeInUp: {
+              '0%': { transform: 'translateY(30px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            rotate3d: {
+              '0%': { transform: 'rotate3d(1, 1, 0, 0deg)' },
+              '100%': { transform: 'rotate3d(1, 1, 0, 360deg)' },
+            },
+            textShimmer: {
+              '0%': { backgroundPosition: '-200% center' },
+              '100%': { backgroundPosition: '200% center' },
+            },
+            borderGlow: {
+              '0%, 100%': { borderColor: 'rgba(139, 92, 246, 0.5)' },
+              '50%': { borderColor: 'rgba(6, 182, 212, 0.8)' },
+            },
+            neonFlicker: {
+              '0%, 100%': { opacity: '1', filter: 'drop-shadow(0 0 5px #8b5cf6)' },
+              '50%': { opacity: '0.8', filter: 'drop-shadow(0 0 20px #06b6d4)' },
+            },
+            particleFloat: {
+              '0%': { transform: 'translateY(100vh) translateX(0)' },
+              '100%': { transform: 'translateY(-100vh) translateX(100px)' },
+            },
+            morph: {
+              '0%, 100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+              '50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' },
+            },
+            glitch: {
+              '0%, 100%': { transform: 'translate(0)' },
+              '20%': { transform: 'translate(-2px, 2px)' },
+              '40%': { transform: 'translate(-2px, -2px)' },
+              '60%': { transform: 'translate(2px, 2px)' },
+              '80%': { transform: 'translate(2px, -2px)' },
+            },
+            parallax: {
+              '0%': { transform: 'translateY(0)' },
+              '100%': { transform: 'translateY(-50%)' },
+            },
+            rainbow: {
+              '0%, 100%': { filter: 'hue-rotate(0deg)' },
+              '50%': { filter: 'hue-rotate(180deg)' },
+            },
+            typewriter: {
+              '0%': { width: '0' },
+              '100%': { width: '100%' },
+            },
+            orbit: {
+              '0%': { transform: 'rotate(0deg) translateX(100px) rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg) translateX(100px) rotate(-360deg)' },
+            },
+            vibrate: {
+              '0%, 100%': { transform: 'translateX(0)' },
+              '25%': { transform: 'translateX(-3px)' },
+              '75%': { transform: 'translateX(3px)' },
+            },
+            ripple: {
+              '0%': { transform: 'scale(0.8)', opacity: '1' },
+              '100%': { transform: 'scale(2)', opacity: '0' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(100px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            pulseBorder: {
+              '0%, 100%': { borderWidth: '1px', borderColor: 'rgba(139, 92, 246, 0.5)' },
+              '50%': { borderWidth: '3px', borderColor: 'rgba(139, 92, 246, 1)' },
+            },
+            spinReverse: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(-360deg)' },
+            },
+            dash: {
+              '0%': { strokeDasharray: '1, 200', strokeDashoffset: '0' },
+              '50%': { strokeDasharray: '89, 200', strokeDashoffset: '-35' },
+              '100%': { strokeDasharray: '89, 200', strokeDashoffset: '-124' },
+            },
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' },
+            },
+            expand: {
+              '0%': { transform: 'scale(0.5)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-3deg)' },
+              '50%': { transform: 'rotate(3deg)' },
+            },
+            swing: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '25%': { transform: 'rotate(15deg)' },
+              '75%': { transform: 'rotate(-15deg)' },
+            },
+            jump: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            socialPulse: {
+              '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(var(--color-rgb), 0.7)' },
+              '50%': { transform: 'scale(1.1)', boxShadow: '0 0 0 10px rgba(var(--color-rgb), 0)' },
+            },
+            frameworkFloat: {
+              '0%': { transform: 'translateY(0) translateX(0) rotate(0deg)' },
+              '25%': { transform: 'translateY(-20px) translateX(20px) rotate(90deg)' },
+              '50%': { transform: 'translateY(0) translateX(40px) rotate(180deg)' },
+              '75%': { transform: 'translateY(20px) translateX(20px) rotate(270deg)' },
+              '100%': { transform: 'translateY(0) translateX(0) rotate(360deg)' },
+            },
+            gradientFlow: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            bounceTwist: {
+              '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+              '30%': { transform: 'translateY(-20px) rotate(5deg)' },
+              '60%': { transform: 'translateY(-10px) rotate(-5deg)' },
+            },
+            colorCycle: {
+              '0%': { filter: 'hue-rotate(0deg)' },
+              '100%': { filter: 'hue-rotate(360deg)' },
+            },
+            iconSpin: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            },
+            lightBeam: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' },
+            },
+            connectGlow: {
+              '0%, 100%': { opacity: '1', boxShadow: '0 0 20px rgba(var(--color-rgb), 0.5)' },
+              '50%': { opacity: '0.8', boxShadow: '0 0 40px rgba(var(--color-rgb), 0.8)' },
+            },
+            networkPulse: {
+              '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+              '50%': { transform: 'scale(1.05)', opacity: '1' },
+              '100%': { transform: 'scale(0.95)', opacity: '0.8' },
+            },
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            'gradient-mesh': 'linear-gradient(90deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #8b5cf6;
+      --primary-dark: #5b21b6;
+      --secondary: #06b6d4;
+      --accent: #f59e0b;
+      --text: #e6eef8;
+      --text-muted: #94a3b8;
+      --dark: #060006;
+      --glass: rgba(255, 255, 255, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: 'Space Grotesk', 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, var(--dark), var(--dark));
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      border: 2px solid var(--dark);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--secondary), var(--accent));
+    }
+
+    /* Glassmorphism Effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .glass:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 300% 300%;
+      animation: gradient 8s ease infinite;
+    }
+
+    /* 3D Card Effect */
+    .card-3d {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .card-3d-inner {
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      transform-style: preserve-3d;
+    }
+
+    .card-3d:hover .card-3d-inner {
+      transform: rotateY(15deg) rotateX(10deg) translateZ(30px);
+    }
+
+    /* Skill Bar */
+    .skill-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 4px;
+      position: relative;
+      animation: progress-animation 1.5s ease-out;
+    }
+
+    @keyframes progress-animation {
+      from { width: 0; }
+    }
+
+    /* Gradient Button */
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    /* Project Card Styles */
+    .project-card {
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Fix for project links */
+    .project-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .project-link:hover {
+      text-decoration: none;
+    }
+
+    /* Matrix Rain Effect */
+    .matrix-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.05;
+    }
+
+    .matrix-char {
+      position: absolute;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 14px;
+      animation: matrix-fall linear infinite;
+    }
+
+    @keyframes matrix-fall {
+      0% { transform: translateY(-100%); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* Loading Bar */
+    .loading-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      animation: loading 2s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% { width: 0%; left: 0; }
+      50% { width: 100%; left: 0; }
+      100% { width: 0%; left: 100%; }
+    }
+
+    /* Interactive Button */
+    .btn-interactive {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-interactive::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-interactive:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Typing Animation */
+    .typing-container {
+      display: inline-block;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.2em;
+      background-color: var(--primary);
+      margin-left: 4px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* Wave Animation */
+    .wave-text {
+      display: inline-block;
+    }
+
+    .wave-text span {
+      display: inline-block;
+      animation: wave 2s ease-in-out infinite;
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    /* Hover lift effect */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Custom utilities */
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    .glass-glow {
+      box-shadow: 
+        0 0 20px rgba(139, 92, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .glass {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+      }
+      
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    /* Floating tech-card behavior */
+    .floating-element {
+      will-change: transform;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-element:hover {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+
+    .floating-element .w-10 i {
+      display: inline-block;
+      animation: rotate-icon 4s ease-in-out infinite;
+      transform-origin: 50% 50%;
+    }
+
+    @keyframes rotate-icon {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-8deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(8deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    /* New animation styles */
+    .holographic {
+      background: linear-gradient(45deg, 
+        rgba(139, 92, 246, 0.1) 0%, 
+        rgba(6, 182, 212, 0.1) 50%, 
+        rgba(139, 92, 246, 0.1) 100%);
+      background-size: 200% 200%;
+      animation: gradient 8s ease infinite;
+    }
+
+    .pulse-ring {
+      position: absolute;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      animation: ripple 2s linear infinite;
+    }
+
+    .typewriter-text {
+      overflow: hidden;
+      border-right: 3px solid var(--primary);
+      white-space: nowrap;
+      animation: typewriter 4s steps(40) infinite;
+    }
+
+    .skill-icon {
+      transition: all 0.3s ease;
+    }
+
+    .skill-icon:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .cert-badge {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-badge::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(30deg);
+      animation: shimmer 3s infinite;
+    }
+
+    .experience-timeline {
+      position: relative;
+    }
+
+    .experience-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .orbit-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .orbiting-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: orbit 10s linear infinite;
+    }
+
+    /* Enhanced skill bars */
+    .enhanced-skill-bar {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enhanced-skill-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        transparent 100%);
+      animation: shimmer 2s infinite;
+    }
+
+    .glitch-text {
+      position: relative;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch-text::before {
+      animation: glitch 0.3s linear infinite;
+      color: #f0f;
+      z-index: -1;
+    }
+
+    .glitch-text::after {
+      animation: glitch 0.3s linear infinite reverse;
+      color: #0ff;
+      z-index: -2;
+    }
+
+    /* Particle container */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: particleFloat 15s linear infinite;
+    }
+
+    /* Enhanced Social Links */
+    .social-link {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .social-link:hover::before {
+      left: 100%;
+    }
+
+    .social-link:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    /* Framework Cards */
+    .framework-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .framework-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, 
+        rgba(139, 92, 246, 0.1) 0%, 
+        rgba(6, 182, 212, 0.1) 50%, 
+        rgba(139, 92, 246, 0.1) 100%);
+      background-size: 200% 200%;
+      animation: gradientFlow 4s linear infinite;
+      z-index: -1;
+    }
+
+    .framework-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Animated Background for Social Links */
+    .social-bg {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-bg::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(255, 255, 255, 0.1) 60deg,
+        transparent 120deg,
+        rgba(255, 255, 255, 0.1) 180deg,
+        transparent 240deg,
+        rgba(255, 255, 255, 0.1) 300deg,
+        transparent 360deg
+      );
+      animation: iconSpin 3s linear infinite;
+      z-index: -1;
+    }
+
+    /* Network Connection Animation */
+    .network-node {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: networkPulse 2s ease-in-out infinite;
+    }
+
+    .network-line {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      animation: lightBeam 2s linear infinite;
+    }
+
+    /* Color Variables for Social Links */
+    .social-github {
+      --color-rgb: 139, 92, 246;
+    }
+
+    .social-linkedin {
+      --color-rgb: 6, 182, 212;
+    }
+
+    .social-email {
+      --color-rgb: 245, 158, 11;
+    }
+
+    .social-instagram {
+      --color-rgb: 225, 48, 108;
+    }
+
+    .social-facebook {
+      --color-rgb: 66, 103, 178;
+    }
+
+    /* Tooltip for Social Links */
+    .social-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .social-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .social-link:hover .social-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(-5px);
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-gray-200">
+  <!-- Loading Bar -->
+  <div class="loading-bar"></div>
+
+  <!-- Matrix Rain Effect -->
+  <div class="matrix-rain"></div>
+
+  <!-- Particles Background -->
+  <div id="particles-js" class="fixed inset-0 z-[-1]"></div>
+
+  <!-- Animated Background Elements -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-2]">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-3/4 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+    
+    <!-- Floating particles -->
+    <div id="floating-particles"></div>
+
+    <!-- Network Connection Animation -->
+    <div class="network-node" style="top: 20%; left: 15%; animation-delay: 0s"></div>
+    <div class="network-node" style="top: 30%; right: 20%; animation-delay: 0.5s"></div>
+    <div class="network-node" style="bottom: 40%; left: 25%; animation-delay: 1s"></div>
+    <div class="network-node" style="bottom: 20%; right: 30%; animation-delay: 1.5s"></div>
+    
+    <div class="network-line" style="top: 25%; left: 15%; width: 100px; transform: rotate(30deg); animation-delay: 0.2s"></div>
+    <div class="network-line" style="top: 35%; right: 25%; width: 120px; transform: rotate(-20deg); animation-delay: 0.7s"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-8">
+    <nav class="glass max-w-6xl mx-auto rounded-2xl px-6 py-3 flex items-center justify-between backdrop-blur-xl animate-slide-in">
+      <a href="#home" class="flex items-center space-x-3 group">
+        <div class="logo-container w-12 h-12 flex items-center justify-center">
+          <img id="headerLogoImg" src="https://i.pinimg.com/736x/c5/6c/35/c56c356e69cbce121c791718207a6380.jpg" alt="JP Logo" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <h1 class="font-bold text-lg bg-gradient-to-r from-primary-400 to-secondary bg-clip-text text-transparent animate-text-shimmer">
+            Jhonna Pelicano
+          </h1>
+          <p class="text-xs text-gray-400">Front-End Developer</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-1">
+        <a href="#home" class="nav-link px-4 py-2 text-sm font-medium hover:text-primary-300 transition-colors">
+          Home
+        </a>
+        <a href="#skills" class="nav-link px-4 py-2 text-sm font-medium hover:text-primary-300 transition-colors">
+          Skills
+        </a>
+        <a href="#experience" class="nav-link px-4 py-2 text-sm font-medium hover:text-primary-300 transition-colors">
+          Experience
+        </a>
+        <a href="#projects" class="nav-link px-4 py-2 text-sm font-medium hover:text-primary-300 transition-colors">
+          Projects
+        </a>
+        <a href="#contact" 
+           class="ml-4 px-6 py-2 btn-gradient rounded-full font-semibold text-white hover:shadow-lg hover:shadow-primary-500/30 transition-all animate-connect-glow">
+          Contact Me
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuButton" class="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="md:hidden glass mt-2 rounded-2xl p-4 hidden">
+      <div class="flex flex-col space-y-3">
+        <a href="#home" class="nav-link px-4 py-3 rounded-lg hover:bg-white/5 transition-colors">
+          Home
+        </a>
+        <a href="#skills" class="nav-link px-4 py-3 rounded-lg hover:bg-white/5 transition-colors">
+          Skills
+        </a>
+        <a href="#experience" class="nav-link px-4 py-3 rounded-lg hover:bg-white/5 transition-colors">
+          Experience
+        </a>
+        <a href="#projects" class="nav-link px-4 py-3 rounded-lg hover:bg-white/5 transition-colors">
+          Projects
+        </a>
+        <a href="#contact" 
+           class="mt-2 px-6 py-3 btn-gradient rounded-lg font-semibold text-white text-center hover:shadow-lg hover:shadow-primary-500/30 transition-all">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen pt-24 pb-20 px-4 md:px-8 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column -->
+        <div data-aos="fade-right" data-aos-duration="1000">
+          <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6 animate-pulse-glow">
+            <span class="w-2 h-2 bg-primary-500 rounded-full animate-ping"></span>
+            <span class="text-sm font-medium">Available for Internships</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            <span class="block">Hi, I'm</span>
+            <span class="gradient-text animate-text-shimmer">Jhonna Pelicano</span>
+          </h1>
+          
+          <div class="text-2xl md:text-3xl font-semibold mb-6">
+            <div class="typing-container">
+              <span class="text-gray-400">I'm a </span>
+              <span id="typing-text" class="text-primary-400"></span>
+              <span class="typing-cursor"></span>
+            </div>
+          </div>
+          
+          <p class="text-gray-400 text-lg mb-8 max-w-xl">
+            I create beautiful, responsive web experiences with modern technologies. 
+            Passionate about learning and building digital solutions that make an impact.
+          </p>
+          
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" 
+               class="px-8 py-3 btn-gradient rounded-full font-semibold text-white hover:shadow-xl hover:shadow-primary-500/30 transition-all transform hover:-translate-y-1 animate-bounce-slow">
+              <i class="fas fa-rocket mr-2"></i>
+              View My Work
+            </a>
+            <a href="#contact" 
+               class="px-8 py-3 border-2 border-primary-500/30 rounded-full font-semibold hover:bg-primary-500/10 transition-all group animate-pulse-border">
+              <span class="group-hover:text-primary-300">Contact Me</span>
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+            </a>
+          </div>
+
+          <!-- Social Links in Hero -->
+          <div class="mt-12">
+            <p class="text-gray-400 mb-4">Connect with me:</p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/Jhonnatty" 
+                 target="_blank"
+                 class="social-link social-github w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary-500/20 hover:text-primary-400 transition-all relative"
+                 style="--color-rgb: 139, 92, 246">
+                <i class="fab fa-github text-xl"></i>
+                <span class="social-tooltip">GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/jhonna-pelicano" 
+                 target="_blank"
+                 class="social-link social-linkedin w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary/20 hover:text-secondary transition-all relative"
+                 style="--color-rgb: 6, 182, 212">
+                <i class="fab fa-linkedin text-xl"></i>
+                <span class="social-tooltip">LinkedIn</span>
+              </a>
+              <a href="mailto:23-43404@g." 
+                 class="social-link social-email w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent/20 hover:text-accent transition-all relative"
+                 style="--color-rgb: 245, 158, 11">
+                <i class="fas fa-envelope text-xl"></i>
+                <span class="social-tooltip">Email</span>
+              </a>
+              <a href="https://www.facebook.com/jhnnplcn" 
+                 target="_blank"
+                 class="social-link social-facebook w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-500/20 hover:text-blue-400 transition-all relative"
+                 style="--color-rgb: 66, 103, 178">
+                <i class="fab fa-facebook text-xl"></i>
+                <span class="social-tooltip">Facebook</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Avatar -->
+        <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+          <div class="relative mx-auto max-w-md">
+            <!-- Avatar Container -->
+            <div class="avatar-3d-container mb-8">
+              <div class="w-64 h-64 mx-auto relative">
+                <div class="absolute inset-0 rounded-full border-4 border-transparent animate-pulse border-primary-500/50"></div>
+                <div class="pulse-ring w-64 h-64"></div>
+                <img src="https://i.pinimg.com/1200x/16/a3/93/16a39351ab0dc1f7f128aba2b715d8f3.jpg" 
+                     alt="Jhonna Pelicano"
+                     class="w-full h-full rounded-full object-cover border-4 border-dark-900 animate-morph">
+                <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500/20 to-secondary/20"></div>
+              </div>
+            </div>
+
+            <!-- Floating Tech Cards -->
+            <div class="absolute top-6 -left-8 floating-element" style="animation-delay: 0s">
+              <div class="glass p-3 rounded-2xl w-40 holographic animate-vibrate">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-lg bg-primary-500/20 flex items-center justify-center skill-icon animate-color-cycle">
+                    <i class="fab fa-html5 text-[#e34f26] text-xl"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold">HTML</div>
+                    <div class="text-xs text-gray-400">Expert</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute bottom-6 -right-8 floating-element" style="animation-delay: 0.8s">
+              <div class="glass p-3 rounded-2xl w-40 holographic animate-vibrate">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center skill-icon animate-color-cycle">
+                    <i class="fab fa-css3-alt text-[#264de4] text-xl"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold">CSS</div>
+                    <div class="text-xs text-gray-400">Advanced</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute top-1/2 -left-14 floating-element" style="animation-delay: 1.6s">
+              <div class="glass p-3 rounded-2xl w-44 holographic animate-vibrate">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center skill-icon animate-color-cycle">
+                    <i class="fab fa-js text-[#f7df1e] text-xl"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold">JavaScript</div>
+                    <div class="text-xs text-gray-400">Intermediate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+                <div class="text-sm font-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-4 md:px-8 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-4 animate-wiggle">
+          <i class="fas fa-cogs text-primary-400 animate-spin-slow"></i>
+          <span class="text-sm font-medium">Core Web Technologies</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          My <span class="gradient-text animate-rainbow">Technical Skills</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Specialized expertise in modern front-end technologies
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- HTML Skill Card -->
+        <div data-aos="fade-up" data-aos-delay="100" class="glass p-8 rounded-3xl hover-lift animate-slide-up">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-600/20 flex items-center justify-center mb-6 mx-auto skill-icon animate-jump">
+            <i class="fab fa-html5 text-[#e34f26] text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">HTML</h3>
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20">
+              <span class="text-sm font-medium">Expert Level</span>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Semantic HTML</span>
+                <span class="text-orange-400">98%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 98%; background: linear-gradient(90deg, #e34f26, #f16529)"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Accessibility</span>
+                <span class="text-orange-400">95%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 95%; background: linear-gradient(90deg, #e34f26, #f16529)"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">SEO Optimization</span>
+                <span class="text-orange-400">92%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 92%; background: linear-gradient(90deg, #e34f26, #f16529)"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-sm border border-orange-500/20 animate-pulse">HTML5</span>
+            <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-sm border border-orange-500/20 animate-pulse">Semantic</span>
+            <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-sm border border-orange-500/20 animate-pulse">Accessibility</span>
+          </div>
+        </div>
+
+        <!-- CSS Skill Card -->
+        <div data-aos="fade-up" data-aos-delay="200" class="glass p-8 rounded-3xl hover-lift animate-slide-up">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center mb-6 mx-auto skill-icon animate-jump" style="animation-delay: 0.2s">
+            <i class="fab fa-css3-alt text-[#264de4] text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">CSS</h3>
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+              <span class="text-sm font-medium">Advanced Level</span>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Flexbox/Grid</span>
+                <span class="text-blue-400">96%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 96%; background: linear-gradient(90deg, #264de4, #2965f1)"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Animations</span>
+                <span class="text-blue-400">94%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 94%; background: linear-gradient(90deg, #264de4, #2965f1)"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Responsive Design</span>
+                <span class="text-blue-400">98%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 98%; background: linear-gradient(90deg, #264de4, #2965f1)"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20 animate-pulse">CSS3</span>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20 animate-pulse">Flexbox</span>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20 animate-pulse">Grid</span>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20 animate-pulse">Animations</span>
+          </div>
+        </div>
+
+        <!-- JavaScript Skill Card -->
+        <div data-aos="fade-up" data-aos-delay="300" class="glass p-8 rounded-3xl hover-lift animate-slide-up">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 flex items-center justify-center mb-6 mx-auto skill-icon animate-jump" style="animation-delay: 0.4s">
+            <i class="fab fa-js text-[#f7df1e] text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">JavaScript</h3>
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20">
+              <span class="text-sm font-medium">Intermediate Level</span>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">ES6+ Features</span>
+                <span class="text-yellow-400">90%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, #f7df1e, #f0db4f)"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">DOM Manipulation</span>
+                <span class="text-yellow-400">95%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 95%; background: linear-gradient(90deg, #f7df1e, #f0db4f)"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">API Integration</span>
+                <span class="text-yellow-400">88%</span>
+              </div>
+              <div class="skill-bar enhanced-skill-bar">
+                <div class="skill-progress" style="width: 88%; background: linear-gradient(90deg, #f7df1e, #f0db4f)"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-sm border border-yellow-500/20 animate-pulse">JavaScript</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-sm border border-yellow-500/20 animate-pulse">ES6+</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-sm border border-yellow-500/20 animate-pulse">DOM</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-sm border border-yellow-500/20 animate-pulse">API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks & Libraries section removed by request. Placeholder preserves spacing. -->
+      <div class="mt-20" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 px-4 md:px-8 bg-gradient-to-b from-dark-800 to-dark-900 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-4 animate-pulse-glow">
+          <i class="fas fa-briefcase text-primary-400 animate-swing"></i>
+          <span class="text-sm font-medium">Career Journey</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          My <span class="gradient-text">Experience</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Professional journey and technical certifications
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- NC2 CSS Certification -->
+        <div data-aos="fade-right" data-aos-delay="200" class="glass p-8 rounded-3xl hover-lift relative overflow-hidden">
+          <div class="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center animate-spin-slow">
+            <i class="fas fa-certificate text-white text-2xl"></i>
+          </div>
+          
+          <div class="flex items-start mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-r from-blue-500/20 to-cyan-400/20 flex items-center justify-center mr-4">
+              <i class="fas fa-award text-2xl text-cyan-400 animate-ping-slow"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2">NC2 CSS Certified</h3>
+              <p class="text-gray-400">Computer Systems Servicing</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-300 mb-6">
+            Certified in Computer Systems Servicing (NC2 CSS), demonstrating expertise in computer hardware, 
+            software installation, network configuration, and system troubleshooting.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
+              <span>Computer Hardware Assembly & Maintenance</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse" style="animation-delay: 0.2s"></div>
+              <span>Software Installation & Configuration</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse" style="animation-delay: 0.4s"></div>
+              <span>Network Setup & Troubleshooting</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse" style="animation-delay: 0.6s"></div>
+              <span>System Diagnostics & Repair</span>
+            </div>
+          </div>
+          
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <i class="fas fa-calendar-alt text-cyan-400 mr-2"></i>
+                <span class="text-sm text-gray-400">Certified: 2022</span>
+              </div>
+              <div class="cert-badge px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-400/20 border border-cyan-400/30">
+                <span class="text-cyan-300 font-semibold">Official Certification</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Years Development Experience -->
+        <div data-aos="fade-left" data-aos-delay="300" class="glass p-8 rounded-3xl hover-lift relative overflow-hidden">
+          <div class="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center animate-spin-reverse">
+            <i class="fas fa-code text-white text-2xl"></i>
+          </div>
+          
+          <div class="flex items-start mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center mr-4">
+              <i class="fas fa-laptop-code text-2xl text-purple-400 animate-pulse-glow"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2">Front-End Developer</h3>
+              <p class="text-gray-400">2+ Years Experience</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-300 mb-6">
+            Over two years of hands-on experience in front-end development, creating responsive web applications, 
+            implementing modern UI/UX designs, and collaborating on various digital projects.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
+              <span>Responsive Web Application Development</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse" style="animation-delay: 0.2s"></div>
+              <span>Modern UI/UX Implementation</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse" style="animation-delay: 0.4s"></div>
+              <span>Cross-Browser Compatibility</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse" style="animation-delay: 0.6s"></div>
+              <span>Performance Optimization</span>
+            </div>
+          </div>
+          
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-purple-400 mr-2"></i>
+                <span class="text-sm text-gray-400">2021 - Present (2+ years)</span>
+              </div>
+              <div class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30">
+                <span class="text-purple-300 font-semibold">Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="mt-12 glass p-8 rounded-3xl" data-aos="zoom-in">
+        <h3 class="text-2xl font-bold mb-8 text-center">Development Journey Timeline</h3>
+        <div class="experience-timeline pl-8 relative">
+          <div class="mb-10 relative pl-8">
+            <div class="absolute left-[-36px] top-0 w-8 h-8 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center animate-pulse">
+              <i class="fas fa-play text-white text-sm"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Started Learning Web Development</h4>
+            <p class="text-gray-400 mb-2">2021</p>
+            <p class="text-gray-300">Began journey with HTML, CSS, and JavaScript fundamentals through online courses and personal projects.</p>
+          </div>
+          
+          <div class="mb-10 relative pl-8">
+            <div class="absolute left-[-36px] top-0 w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center animate-pulse" style="animation-delay: 0.3s">
+              <i class="fas fa-graduation-cap text-white text-sm"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Earned NC2 CSS Certification</h4>
+            <p class="text-gray-400 mb-2">2022</p>
+            <p class="text-gray-300">Certified in Computer Systems Servicing, enhancing technical knowledge in hardware and software systems.</p>
+          </div>
+          
+          <div class="mb-10 relative pl-8">
+            <div class="absolute left-[-36px] top-0 w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center animate-pulse" style="animation-delay: 0.6s">
+              <i class="fas fa-code text-white text-sm"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Professional Projects & Freelance Work</h4>
+            <p class="text-gray-400 mb-2">2022 - 2023</p>
+            <p class="text-gray-300">Developed multiple responsive websites, e-commerce platforms, and web applications for clients and personal projects.</p>
+          </div>
+          
+          <div class="relative pl-8">
+            <div class="absolute left-[-36px] top-0 w-8 h-8 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center animate-pulse" style="animation-delay: 0.9s">
+              <i class="fas fa-rocket text-white text-sm"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Current Focus & Future Goals</h4>
+            <p class="text-gray-400 mb-2">2024 - Present</p>
+            <p class="text-gray-300">Seeking internship opportunities, expanding skills in modern frameworks, and building innovative web solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-4 md:px-8 bg-gradient-to-b from-dark-900 to-dark-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-4">
+          <i class="fas fa-project-diagram text-primary-400"></i>
+          <span class="text-sm font-medium">Featured Work</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          My <span class="gradient-text">Projects</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Interactive web applications with modern animations
+        </p>
+      </div>
+
+      <!-- Project Gallery -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectGallery">
+        <!-- Project 1: Tourism Website -->
+        <div data-aos="fade-up" data-aos-delay="100" class="project-card glass rounded-3xl overflow-hidden hover-lift">
+          <a href="https://tourism-website-mu-three.vercel.app/" target="_blank" class="project-link">
+            <div class="relative overflow-hidden h-48">
+              <img src="https://i.pinimg.com/736x/39/ea/57/39ea57e52b4e916cd923c40dd15dc066.jpg" alt="Tourism project screenshot" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-600 opacity-40"></div>
+              <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary-500/90 text-white text-sm font-semibold">
+                Tourism
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-3">Tourism Website</h3>
+              <p class="text-gray-400 mb-6">
+                Discover Mabini Batangas — A responsive tourism website showcasing local attractions with modern design.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm border border-primary-500/20">
+                  HTML/CSS
+                </span>
+                <span class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm border border-primary-500/20">
+                  JavaScript
+                </span>
+                <span class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm border border-primary-500/20">
+                  Responsive
+                </span>
+              </div>
+              <div class="inline-flex items-center space-x-2 text-primary-400 hover:text-primary-300 font-semibold">
+                <span>View Project</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 2: Ordering System -->
+        <div data-aos="fade-up" data-aos-delay="200" class="project-card glass rounded-3xl overflow-hidden hover-lift">
+          <a href="https://ordering-system-gray.vercel.app/" target="_blank" class="project-link">
+            <div class="relative overflow-hidden h-48">
+              <img src="https://i.pinimg.com/1200x/20/6b/18/206b186e4a88b3c789306aeec46d9f1d.jpg" alt="Ordering System screenshot" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-br from-secondary to-secondary-600 opacity-40"></div>
+              <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-secondary/90 text-white text-sm font-semibold">
+                E-commerce
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-3">Ordering System</h3>
+              <p class="text-gray-400 mb-6">
+                Interactive cookies ordering system with cart functionality, modern UI, and real-time updates.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm border border-secondary/20">
+                  JavaScript
+                </span>
+                <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm border border-secondary/20">
+                  Local Storage
+                </span>
+                <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm border border-secondary/20">
+                  Cart System
+                </span>
+              </div>
+              <div class="inline-flex items-center space-x-2 text-secondary hover:text-secondary-300 font-semibold">
+                <span>View Project</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 3: Furniture E-commerce -->
+        <div data-aos="fade-up" data-aos-delay="300" class="project-card glass rounded-3xl overflow-hidden hover-lift">
+          <a href="https://e-commerce-zbvw.vercel.app/" target="_blank" class="project-link">
+            <div class="relative overflow-hidden h-48">
+              <img src="https://i.pinimg.com/1200x/ac/09/b8/ac09b87d55982c759af21ba7c6c7dec5.jpg" alt="Furniture project screenshot" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-br from-accent to-accent-600 opacity-40"></div>
+              <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-accent/90 text-white text-sm font-semibold">
+                Furniture
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-3">Furniture E-commerce</h3>
+              <p class="text-gray-400 mb-6">
+                Modern e-commerce platform for furniture with product catalog, cart, and smooth animations.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm border border-accent/20">
+                  E-commerce
+                </span>
+                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm border border-accent/20">
+                  Product Gallery
+                </span>
+                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm border border-accent/20">
+                  Modern Design
+                </span>
+              </div>
+              <div class="inline-flex items-center space-x-2 text-accent hover:text-accent-300 font-semibold">
+                <span>View Project</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 md:px-8 relative">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-4">
+          <i class="fas fa-envelope text-primary-400"></i>
+          <span class="text-sm font-medium">Get In Touch</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Let's <span class="gradient-text">Connect</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          I'm currently seeking internship opportunities and would love to collaborate!
+        </p>
+      </div>
+
+      <div class="glass rounded-3xl p-8 md:p-12 hover-lift" data-aos="fade-up" data-aos-delay="200">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+            
+            <div class="space-y-6">
+              <a href="mailto:jhonnapelicano36@gmail.com" 
+                 class="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all group social-link social-email">
+                <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:animate-icon-spin">
+                  <i class="fas fa-envelope text-accent"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-400">Email</div>
+                  <div class="font-semibold">jhonnapelicano36@gmail.com</div>
+                </div>
+                <span class="social-tooltip">Send Email</span>
+              </a>
+
+              <a href="https://github.com/Jhonnatty" 
+                 target="_blank"
+                 class="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all group social-link social-github">
+                <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center group-hover:animate-icon-spin">
+                  <i class="fab fa-github text-primary-400"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-400">GitHub</div>
+                  <div class="font-semibold">github.com/Jhonnatty</div>
+                </div>
+                <span class="social-tooltip">Visit GitHub</span>
+              </a>
+
+              <a href="https://linkedin.com/in/jhonna-pelicano" 
+                 target="_blank"
+                 class="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all group social-link social-linkedin">
+                <div class="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center group-hover:animate-icon-spin">
+                  <i class="fab fa-linkedin text-secondary"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-400">LinkedIn</div>
+                  <div class="font-semibold">linkedin.com/in/jhonna-pelicano</div>
+                </div>
+                <span class="social-tooltip">Visit LinkedIn</span>
+              </a>
+
+                <a href="https://www.facebook.com/jhnnplcn" 
+                 target="_blank"
+                 class="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all group social-link social-facebook">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center group-hover:animate-icon-spin">
+                  <i class="fab fa-facebook text-blue-400"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-400">Facebook</div>
+                  <div class="font-semibold">Facebook Profile</div>
+                </div>
+                <span class="social-tooltip">Visit Facebook</span>
+              </a>
+            </div>
+
+            <div class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-primary-500/10 to-secondary/10 border border-primary-500/20">
+              <h4 class="font-bold mb-3 flex items-center">
+                <i class="fas fa-bolt text-yellow-400 mr-2 animate-pulse"></i>
+                Availability
+              </h4>
+              <p class="text-sm text-gray-400">
+                Currently available for internships and part-time opportunities. 
+                Open to both remote and on-site positions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                <input type="text" 
+                       id="name" 
+                       required
+                       class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary-500 focus:outline-none transition-colors">
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                <input type="email" 
+                       id="email" 
+                       required
+                       class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary-500 focus:outline-none transition-colors">
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                <textarea id="message" 
+                          rows="5"
+                          required
+                          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary-500 focus:outline-none transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" 
+                      class="w-full px-8 py-4 btn-gradient rounded-xl font-semibold text-white hover:shadow-xl hover:shadow-primary-500/30 transition-all animate-bounce-twist">
+                <span class="flex items-center justify-center">
+                  Send Message
+                  <i class="fas fa-paper-plane ml-2 group-hover:animate-icon-spin"></i>
+                </span>
+              </button>
+            </form>
+
+            <div id="formMessage" class="mt-6 p-4 rounded-xl bg-green-500/10 border border-green-500/20 hidden">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-check-circle text-green-400 animate-ping-slow"></i>
+                <p class="text-green-400">Message sent successfully! I'll get back to you soon.</p>
+              </div>
+            </div>
+
+            <!-- Social Media Links removed by request (Contact section). -->
+            <div class="mt-8 pt-8 border-t border-white/10" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 md:px-8 border-t border-white/10 bg-dark-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" aria-hidden="true"></div>
+            <div>
+              <div class="font-bold text-lg gradient-text">Jhonna Pelicano</div>
+              <div class="text-sm text-gray-400">Front-End Developer & IT Student</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer social links removed by request. -->
+        <div class="flex space-x-6" aria-hidden="true"></div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
+        <p>© 2024 Jhonna Pelicano. All rights reserved.</p>
+        <p class="mt-2">
+          Built with HTML, CSS, JavaScript and Tailwind CSS
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" 
+          class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-primary-500 text-white shadow-lg hover:shadow-xl hover:shadow-primary-500/30 transition-all opacity-0 translate-y-10">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Typing Effect for Hero Section
+    const typingText = document.getElementById('typing-text');
+    const roles = [
+      'Front-End Developer',
+      'UI/UX Designer',
+      'IT Student'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      
+      if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        setTimeout(() => isDeleting = true, 1500);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+
+    // Initialize typing effect
+    setTimeout(typeEffect, 1000);
+
+    // Particles.js configuration
+    if (document.getElementById('particles-js')) {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#8b5cf6" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#8b5cf6",
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" }
+          }
+        }
+      });
+    }
+
+    // Matrix Rain Effect
+    const matrixRain = document.querySelector('.matrix-rain');
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%"#&_(){}[]!?<>;:';
+    
+    function createMatrixRain() {
+      if (!matrixRain) return;
+      
+      const char = document.createElement('span');
+      char.className = 'matrix-char';
+      char.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+      char.style.left = Math.random() * 100 + 'vw';
+      char.style.animationDuration = Math.random() * 3 + 2 + 's';
+      char.style.animationDelay = Math.random() * 2 + 's';
+      matrixRain.appendChild(char);
+      
+      setTimeout(() => {
+        char.remove();
+      }, 5000);
+    }
+    
+    setInterval(createMatrixRain, 100);
+
+    // Create floating particles
+    function createFloatingParticles() {
+      const container = document.getElementById('floating-particles');
+      if (!container) return;
+      
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.width = Math.random() * 4 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+        particle.style.opacity = Math.random() * 0.5 + 0.1;
+        particle.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        container.appendChild(particle);
+      }
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.style.opacity = '1';
+        backToTop.style.transform = 'translateY(0)';
+      } else {
+        backToTop.style.opacity = '0';
+        backToTop.style.transform = 'translateY(10px)';
+      }
+    });
+
+    if (backToTop) {
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    if (contactForm && formMessage) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Show success message
+        formMessage.classList.remove('hidden');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          formMessage.classList.add('hidden');
+        }, 5000);
+      });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Project cards click effect
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        // If the click was on the link itself, let it handle the navigation
+        if (e.target.closest('a')) {
+          return;
+        }
+        
+        // Otherwise, find the link inside and click it
+        const link = this.querySelector('a.project-link');
+        if (link) {
+          link.click();
+        }
+      });
+    });
+
+    // Initialize on page load
+    window.addEventListener('load', () => {
+      // Add loaded class for animations
+      document.body.classList.add('loaded');
+      
+      // Initialize particles
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS.load('particles-js', 'particles.json', function() {
+          console.log('Particles loaded');
+        });
+      }
+      
+      // Create floating particles
+      createFloatingParticles();
+      
+      // Add random glitch effect to hero name
+      const heroName = document.querySelector('.gradient-text');
+      if (heroName) {
+        setInterval(() => {
+          if (Math.random() > 0.7) {
+            heroName.classList.add('animate-glitch');
+            setTimeout(() => {
+              heroName.classList.remove('animate-glitch');
+            }, 300);
+          }
+        }, 3000);
+      }
+
+      // Animate social links on hover
+      document.querySelectorAll('.social-link').forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          this.style.animation = 'socialPulse 1.5s ease-in-out';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+          this.style.animation = '';
+        });
+      });
+    });
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      // Escape key closes mobile menu
+      if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+      
+      // Spacebar on project cards triggers click
+      if (e.key === ' ' || e.key === 'Enter') {
+        const focused = document.activeElement;
+        if (focused && focused.classList.contains('project-card')) {
+          focused.click();
+        }
+      }
+    });
+
+    // Project card hover effects
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Add active state to navigation links
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveNavLink() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary-400');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('text-primary-400');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNavLink);
+
+    // Framework cards random animation
+    document.querySelectorAll('.framework-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        const animations = ['bounce-twist', 'jump', 'wiggle', 'vibrate'];
+        const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+        this.classList.add(`animate-${randomAnim}`);
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.classList.remove('animate-bounce-twist', 'animate-jump', 'animate-wiggle', 'animate-vibrate');
+      });
+    });
+  </script>
+</body>
+</html>
